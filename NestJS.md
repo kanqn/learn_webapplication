@@ -73,7 +73,9 @@ model Task {
 ### seedを作成する  
 
 
-
+## エラー系  
+### VSCodeでfix this prettier/prettierとでる  
+``` npx prettier --write . ``` を実行  
 
 ## 参考文献  
 https://zenn.dev/mikakane/books/nestjs-tutorial/viewer/setup  
