@@ -69,7 +69,6 @@ getIceCream = (iceCreamType) => {
 ```
 </details>  
 
-
 ### useState  
 stateを管理するためのReactフック  
 
