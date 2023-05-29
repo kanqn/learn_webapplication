@@ -1,3 +1,75 @@
+### fetchについて  
+主にAPIを取得する際に使用するもので、  
+fetch(取得したいURL,{method: メソッド指定(基本的にはGET) })  
+また、.thenを使用してレスポンスを取得する。  
+#### 使い方  
+  
+<details>
+<summary>コードを表示する</summary>
+  
+```
+import React, {useState, useEffect} from 'react'
+
+const Fetch = () => {
+
+    const [posts, setPosts] = useState([])
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/posts', {method: 'GET'})
+        .then(res => res.json())
+        .then(data => {
+            setPosts(data)
+        })
+    },[])
+
+    return (
+        <div>
+            <ul>
+                {
+                    posts.map(post => 
+                    <li key={post.id}>{post.title}</li>
+                    )
+                }
+            </ul>
+
+        </div>
+    )
+}
+
+export default Fetch;
+```
+</details>  
+
+### Promiseについて  
+Promiseを使うと何かの処理を施して、その結果が戻ってくることが約束される  
+また、Promiseは**非同期通信を行うことも可能**  
+
+  
+#### 使い方  
+<details>
+<summary>コードを表示する</summary>
+  
+```
+//結果は成功(Resolve)もしくは失敗(Reject)のどちらかの方法で帰って来ます。
+
+const iceCreams = ["strawberry", "chocolate", "vanilla"];
+const iceCreamType = "lemon";
+
+getIceCream = (iceCreamType) => {
+  return new Promise((resolve, reject) => {
+    if(iceCreams.indexOf(iceCreamType) > -1){
+      resolve(iceCreamType);
+    } else {
+      reject("There is no ice cream");
+    }
+
+  };
+}
+
+```
+</details>  
+
+
 ### useState  
 stateを管理するためのReactフック  
 
