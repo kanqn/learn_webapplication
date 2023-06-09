@@ -1,6 +1,5 @@
 ## Reactについてのメモ
 
-
 ### useState()で配列を保持する  
 
 ```
@@ -19,6 +18,22 @@ settasklist([
   }
 ]);
 ```
+
+### map関数を使う  
+```
+
+//                   ↓{}ではなく()なのに注意！
+tasklist.map(task => (
+     //この中にdivで囲んだhtmlフォームを書くとdivで囲まれたまとまりごと更新できる(todolistのtodoを更新するのに使える)
+      
+   
+      //task.textのtextはsetTaskListを呼び出した際のtext: inputTextからきている
+      <span>{task.text}</span>
+))
+
+```
+
+
 
 ### fetchについて  
 主にAPIを取得する際に使用するもので、  
