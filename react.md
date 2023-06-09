@@ -1,3 +1,25 @@
+## Reactについてのメモ
+
+
+### useState()で配列を保持する  
+
+```
+//配列を保持するための配列を作成する
+const [tasklist , settasklist] = useState([]);
+
+//文字入力
+const [inputText, setinputText] = useState("");
+
+//...はスプレッド構文でひとつ前の状態を意味する
+
+settasklist([
+...tasklist,
+  {
+  text: inputText
+  }
+]);
+```
+
 ### fetchについて  
 主にAPIを取得する際に使用するもので、  
 fetch(取得したいURL,{method: メソッド指定(基本的にはGET) })  
