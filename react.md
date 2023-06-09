@@ -33,7 +33,16 @@ tasklist.map(task => (
 
 ```
 
+### filter関数でリスト除外する
+filterは条件式がfalseであればリストから除外し、trueであればリストに残される
+```
+//idと比較して!==であれば(1 == 1はtrueだが、filter関数はfalseを除外するため!==とする)
+//リストから除外するコード
 
+const handleDelete = (id) => {
+  setTaskList(taskList.filter((task) => task.id !== id));
+  }
+```
 
 ### fetchについて  
 主にAPIを取得する際に使用するもので、  
