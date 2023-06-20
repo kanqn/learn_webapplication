@@ -15,8 +15,6 @@
 <br />
 
 #### 縦方向に対して中央に寄せる align-items: ;  
-<br />  
-
 #### 横並びの位置を揃える justfy-content: ;  
 <br />
 
