@@ -16,6 +16,8 @@
 
 #### 縦方向に対して中央に寄せる align-items: ;  
 #### 横並びの位置を揃える justfy-content: ;  
+center , space-between(良い感じに隙間を開ける)など指定できる  
+なお、これらは**display: flex;が適用されていないと反映されない  
 <br />
 
 #### text-alignプロパティ: 文字や画像に対して、水平方向の揃え方を指定するプロパティ  
@@ -26,6 +28,8 @@
 
 #### 前後左右に余白を作る padding: 上下(0) 左右(2rem);  
 <br />
+
+#### マウスポインターが要素の上にいる時のマウスカーソルの種類を設定　cursor: 
 
 #### ブロック要素を横並びにする  display: inline-block;
 <br />  
@@ -59,6 +63,13 @@ divでクラスを指定してdivの枠線の縦横をわざと太くしすぎ�
 ```
 
 <br />
+
+#### divタグに画像を挿入する  
+background: url(ローカルファイルの画像);  
+また、画像がうまく表示されないときは
+background-repeat: no-repeat;にする。  
+
+
 #### 位置を180°回転させる　transform: rotate(-180deg);
 <br />
 
