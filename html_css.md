@@ -93,6 +93,7 @@ background-repeat: no-repeat;にする。
 <br />
 
 #### ホバー(カーソルが要素に触れた)したときに色を変える  
+なお、うまくtransitionがかからない時は、position: absolute;を指定してあげる必要がある。  
 ```
 .nav-links ul a {
  font-weight: 600;
