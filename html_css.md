@@ -10,6 +10,10 @@ marginを当てたい場合は、display: inline-block;をあててあげるこ�
 また、***初期状態だと縦並びになる  
 <br />  
 
+#### HTMLブロックを横並びにする display: flex;  
+なお、display: flex;は親要素に対して追加すること  
+<br />
+
 #### liタグの黒ポチを消す list-style: none;
 <br />
 
@@ -21,13 +25,11 @@ width heightを設定した状態で、object-fit: cover;
 
 #### 少し透明にする opacity: 0.8;
 
+#### サイト全体に若干色をつける mix-blend-mode: 色を設定したdivクラス;  
 
-#### HTMLブロックを横並びにする display: flex;  
-なお、display: flex;は親要素に対して追加すること  
-<br />
 
-#### 縦方向に対して中央に寄せる align-items: ;  
-#### 横並びの位置を揃える justfy-content: ;  
+#### 縦方向に対して中央に寄せる align-items: center;  
+#### 横並びの位置を中央に揃える justfy-content: center;  
 center , space-between(良い感じに隙間を開ける)など指定できる  
 なお、これらは**display: flex;が適用されていないと反映されない
 
@@ -108,6 +110,6 @@ background-repeat: no-repeat;にする。
 ```
 <br />
 #### relativeとabsolute  
-・position:によく使われる  
-・absoluteは絶対値つまりは、親要素(relative)を基準にして位置を決める  
+・position:で使われる  
+・absoluteは絶対値もしくは、親要素(relative)を基準にして位置を決める  
 
