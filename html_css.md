@@ -10,12 +10,18 @@ marginを当てたい場合は、display: inline-block;をあててあげるこ�
 また、***初期状態だと縦並びになる  
 <br />  
 
+#### relativeとabsolute  
+・position:で使われる  
+・absoluteは絶対値もしくは、親要素(relative)を基準にして位置を決める 
+
 #### HTMLブロックを横並びにする display: flex;  
 なお、display: flex;は親要素に対して追加すること  
 <br />
 
 #### liタグの黒ポチを消す list-style: none;
 <br />
+
+#### はみ出た部分を隠す overflow: hidden;
 
 #### 文字の折り返し地点を設定する  
 max-width: ;を使うことで、表示する枠の大きさを決めてあげることで設定できる  
@@ -109,8 +115,5 @@ background-repeat: no-repeat;にする。
   color: 触れたときの色を指定する;
  }
 ```
-<br />
-#### relativeとabsolute  
-・position:で使われる  
-・absoluteは絶対値もしくは、親要素(relative)を基準にして位置を決める  
+<br /> 
 
