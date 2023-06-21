@@ -53,6 +53,8 @@ space-betweenは**widthを指定しないと反映されない
 
 #### マウスポインターが要素の上にいる時のマウスカーソルの種類を設定　cursor: 
 
+#### ボタンの角を丸める border-radius: ~px;
+
 #### ブロック要素を横並びにする  display: inline-block;
 <br />  
   
@@ -98,6 +100,10 @@ background-repeat: no-repeat;にする。
 #### aタグのアンダーラインを非表示　text-decoration: none;  
 <br />
 
+・インライン要素だとtranslateがあたらない可能性があるため  
+display: block;にする必要がある  
+
+  
 #### ホバー(カーソルが要素に触れた)したときに色を変える  
 なお、うまくtransitionがかからない時は、position: absolute;を指定してあげる必要がある。  
 ```
