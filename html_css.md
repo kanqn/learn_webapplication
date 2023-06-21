@@ -18,6 +18,8 @@ marginを当てたい場合は、display: inline-block;をあててあげるこ�
 なお、display: flex;は親要素に対して追加すること  
 <br />
 
+#### テキトーな文字列を作りたい lorem文字数 tab保管
+
 #### liタグの黒ポチを消す list-style: none;
 <br />
 
@@ -32,7 +34,7 @@ width heightを設定した状態で、object-fit: cover;
 #### 少し透明にする opacity: 0.8;
 
 #### サイト全体に若干色をつける mix-blend-mode: 色を設定したdivクラス;  
-
+なお、mix-blend-mode: screen;で良い感じにブレンディングしてくれる  
 
 #### 縦方向に対して中央に寄せる align-items: center;  
 #### 横並びの位置を中央に揃える justfy-content: center;  
