@@ -1,3 +1,8 @@
+### XSS
+```
+<svg+onload=location='javascript:alert(1)'>
+```
+
 ### API
 各フレームワークにあったエンドポイントリストを使ってファジング→ヒットしたURIにアクセスしてクレデンシャルなデータを保持しているAPIを見つける
 Reactであればapp.jsが/に相当するため、setting.jsにアクセスすれな/settingに入れたりする
