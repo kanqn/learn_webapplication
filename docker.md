@@ -1,4 +1,27 @@
-### dockerについて
+### 動作確認
+
+```
+docker run hello-world
+
+Hello from Docker!と表示されればOK
+```
+
+### 現在PCにあるイメージを確認する
+
+```
+docker images
+```
+
+### Ubuntuのイメージを用意する
+
+```
+docker pull ubuntu:latest
+```
+
+
+
+
+## dockerについて
 
 どんなPCにするか(セットアップの手順書)の仕様書を書いて、それを新しいイメージとして作る  
 これには2種類の方法がある  
@@ -20,22 +43,18 @@ RUN apt-get install python3 python3-pip -y
 RUN pip3 install flask
 ```
 
-### 動作確認
+#### 仕様書(Dockerfile)をビルドする
 
 ```
-docker run hello-world
+-t で名前をつける
+docker build ./ -t example
 
-Hello from Docker!と表示されればOK
+または、イメージタグを使ってバージョン名を明記する
+docker build . -t hello:1.0
 ```
 
-### 現在PCにあるイメージを確認する
+#### ビルドしたイメージをコンテナとして実行する
 
 ```
-docker images
-```
-
-### Ubuntuのイメージを用意する
-
-```
-docker pull ubuntu:latest
+docker run example
 ```
