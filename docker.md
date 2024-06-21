@@ -103,3 +103,8 @@ ENV DB_USER="user" \
 
 容量が大きいファイルの場合はtarで圧縮した場合→**ADDでコピー**  
 それ以外→**COPYでコピー**
+
+```
+COPY ./file.conf /etc/conf
+ADD ./file.tar /etc/conf
+```
