@@ -17,10 +17,10 @@ docker images
 ```
 docker pull ubuntu:latest
 ```
-
-
-
-
+  
+  
+  
+  
 ## dockerについて
 
 どんなPCにするか(セットアップの手順書)の仕様書を書いて、それを新しいイメージとして作る  
@@ -58,3 +58,48 @@ docker build . -t hello:1.0
 ```
 docker run example
 ```
+  
+  
+  
+## Dockerfileの基本的な記述
+
+### 環境のベースを何に使うかを指定する FROM
+
+```
+FROM ubuntu:latest
+```
+
+### 実行したいコマンドを記載する RUN
+
+```
+RUN uptget update && uptget install -y vim
+```
+
+### コンテナ起動時に実行するコマンドとオプションを変更する CMD
+
+```
+CMD ["ls", "-a"]
+```
+
+### 操作するディレクトリの絶対パスを指定する WORKDIR
+
+指定したら、それ以降はそのディレクトリを基準にDOckerfileが実行される  
+
+```
+WORKDIR /opt
+```
+
+### 環境変数の設定を行う ENV
+
+```
+ENV DB_USER="user" \
+    DB_PASSWORD="password" \
+    DB_DATABASE="sample_db"
+```
+
+### コンテナに指定したフォルダやファイルをコピーする COPY , ADD
+
+#### COPYとADDの違い
+
+容量が大きいファイルの場合はtarで圧縮した場合→**ADDでコピー**  
+それ以外→**COPYでコピー**
