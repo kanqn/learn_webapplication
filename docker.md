@@ -108,3 +108,45 @@ ENV DB_USER="user" \
 COPY ./file.conf /etc/conf
 ADD ./file.tar /etc/conf
 ```
+
+## Docker Composeとymlファイルについて
+
+### Docker Composeとは
+  
+**複数のコンテナで構成されるアプリケーションについて、Dockerイメージのビルドや各コンテナの起動・停止などをより簡単に行えるようにするツール**  
+
+### DockerComposeでコンテナを起動するまでの流れ
+
+1. Dockerfileの作成　(これをdocker-compose.ymlから参照する)
+2. docker-compose.ymlの作成　(Docker Composeの設定ファイル)
+3. docker-composeコマンドでコンテナ起動
+
+### docker-compose.ymlファイルの書き方
+
+```
+例:
+services: 
+  db:
+    image: mysql:5.7 
+    volumes: 
+      - db_data:/var/lib/mysql 
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: your_database
+      MYSQL_USER: user_name
+      MYSQL_PASSWORD: user_password
+
+  web:
+    build: ./rails_project 
+    command: bundle exec rails s -p 3000 -b '0.0.0.0' 
+    volumes: 
+      - .:/myapp
+    ports: 
+      - "3000:3000"
+    depends_on: 
+      - db
+      
+volumes: 
+    db_data:
+```
