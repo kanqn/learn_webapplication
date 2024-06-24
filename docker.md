@@ -57,6 +57,9 @@ docker build . -t hello:1.0
 
 ```
 docker run example
+
+もしくは--nameはコンテナの名前をtest-containerにするコマンドで、testは基となるDockerイメージの名前
+docker run -d -p 8080:80 --name test-container test
 ```
 
 ## Dockerの基本コマンド
