@@ -106,9 +106,25 @@ $ docker pull <Docker Hubにあるイメージ名>
 $ docker pull lukaszlach/merry-christmas
 ```
 
+### コンテナ内でコマンド実行
 
+```
+$ docker exec <コンテナ名> ls -l /usr
+```
 
+### イメージの削除
 
+```
+docker rmi <REPOSITORY:TAGまたはIMAGE ID>
+```
+
+### コンテナの削除
+
+```
+コンテナ停止を確認した後に以下コマンド
+
+docker rm <CONTAINER IDまたはNAME>
+```
 
 ## Dockerfileの基本的な記述
 
