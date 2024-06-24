@@ -58,8 +58,37 @@ docker build . -t hello:1.0
 ```
 docker run example
 ```
-  
-  
+
+## Dockerの基本コマンド
+
+### コンテナ一覧を表示する
+
+```
+$ docker ps
+
+停止中含めたコンテナを表示する
+$ docker ps -a
+```
+
+### イメージ一覧を表示する
+
+```
+$ docker images
+```
+
+### コンテナ停止
+
+```
+docker stop <コンテナIDもしくはNAME>
+
+停止したことは、docker psで確認すること
+```
+
+### コンテナ起動
+
+```
+$ docker start <コンテナIDもしくはNAME>
+```
   
 ## Dockerfileの基本的な記述
 
