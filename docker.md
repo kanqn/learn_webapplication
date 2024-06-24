@@ -62,6 +62,10 @@ docker run example
 docker run -d -p 8080:80 --name test-container test
 ```
 
+
+
+
+
 ## Dockerの基本コマンド
 
 ### コンテナ一覧を表示する
@@ -92,7 +96,20 @@ docker stop <コンテナIDもしくはNAME>
 ```
 $ docker start <コンテナIDもしくはNAME>
 ```
-  
+
+### イメージを取得する
+
+```
+$ docker pull <Docker Hubにあるイメージ名>
+
+例:
+$ docker pull lukaszlach/merry-christmas
+```
+
+
+
+
+
 ## Dockerfileの基本的な記述
 
 ### 環境のベースを何に使うかを指定する FROM
